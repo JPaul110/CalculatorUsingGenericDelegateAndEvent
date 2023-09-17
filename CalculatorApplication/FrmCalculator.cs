@@ -31,26 +31,42 @@ namespace CalculatorApplication
 
         private void cbOperator_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedOperator = cbOperator.SelectedItem.ToString();
-
-            double result = 0.0;
-
-            switch (cbOperator)
-            {
-                case "+":
-                    cal.CalculateEvent += new Formula<double>(cal.GetSum);
-                    result = cal.GetSum(num1, num2);
-                    break;
-            }
+        
         }
 
         private void btnEqual_Click(object sender, EventArgs e)
         {
-            cal = new CalculatorClass();
+            cal = new CalculatorClass();        
             num1 = Convert.ToDouble(txtBoxInput1.Text);
             num2 = Convert.ToDouble(txtBoxInput2.Text);
 
+            if (cbOperator.SelectedIndex == 1)
+            {
+                cal.CalculateEvent += new Formula<double>(cal.GetSum);
+                lblDisplayTotal.Text = cal.GetSum(num1, num2).ToString();
+                cal.CalculateEvent -= new Formula<double>(cal.GetSum);
+            }
 
+            else if (cbOperator.SelectedIndex == 2)
+            {
+                cal.CalculateEvent += new Formula<double>(cal.GetDifference);
+                lblDisplayTotal.Text = cal.GetDifference(num1, num2).ToString();
+                cal.CalculateEvent -= new Formula<double>(cal.GetDifference);
+            }
+
+            else if (cbOperator.SelectedIndex == 3)
+            {
+                cal.CalculateEvent += new Formula<double>(cal.GetProduct);
+                lblDisplayTotal.Text = cal.GetProduct(num1, num2).ToString();
+                cal.CalculateEvent -= new Formula<double>(cal.GetProduct);
+            }
+
+            else if (cbOperator.SelectedIndex == 4)
+            {
+                cal.CalculateEvent += new Formula<double>(cal.GetQuitient);
+                lblDisplayTotal.Text = cal.GetQuitient(num1, num2).ToString();
+                cal.CalculateEvent -= new Formula<double>(cal.GetQuitient);
+            }
         }
     }
 }

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace CalculatorApplication
 {
-    public delegate T Formula<T>(T arg1);
+    public delegate T Formula<T>(T arg1, T arg2);
     internal class CalculatorClass
     {
-        public Formula<double> frmula;
+        public Formula<double> info;
 
 
         public double GetSum(double a, double b)
@@ -27,12 +27,12 @@ namespace CalculatorApplication
             add
             {
                 Console.WriteLine("Added the Delegate");
-                frmula += value;
+                info += value;
             }
             remove
             {
                 Console.WriteLine("Delegate removed");
-                frmula -= value;
+                info -= value;
             }
         }
 
