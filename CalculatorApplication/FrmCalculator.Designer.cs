@@ -63,7 +63,7 @@
             this.cbOperator.Name = "cbOperator";
             this.cbOperator.Size = new System.Drawing.Size(59, 27);
             this.cbOperator.TabIndex = 2;
-            this.cbOperator.Text = "/";
+            this.cbOperator.Text = "         ";
             this.cbOperator.SelectedIndexChanged += new System.EventHandler(this.cbOperator_SelectedIndexChanged);
             // 
             // lblDisplayTotal
@@ -131,7 +131,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 330);
+            this.ClientSize = new System.Drawing.Size(418, 234);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
